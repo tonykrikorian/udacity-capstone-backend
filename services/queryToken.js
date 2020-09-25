@@ -6,7 +6,7 @@ const getToken = async () => {
     {},
     {
       headers: {
-        "Ocp-Apim-Subscription-Key": `"${process.env.TOKEN}"`,
+        "Ocp-Apim-Subscription-Key": `${process.env.TOKEN}`,
       },
     }
   );
