@@ -1,5 +1,6 @@
 const Router = require("express-promise-router");
 const translationService = require("../services/translation");
+const getLanguageListService = require("../services/languagesList");
 const route = new Router();
 
 route.post("/", async (req, res) => {
@@ -12,5 +13,8 @@ route.post("/", async (req, res) => {
   return res.send(traducciones);
 });
 
-route.get("/languages", async (req, res) => {});
+route.get("/languages", async (req, res) => {
+  const response = await getLanguageListService();
+  return res.send(response);
+});
 module.exports = route;
