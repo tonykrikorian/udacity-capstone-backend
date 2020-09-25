@@ -9,7 +9,7 @@ app.use(morgan("dev"));
 
 app.use("/api/translate", tranlate);
 
-const port = 3600;
+const port = 80;
 app.listen(port, () => {
   console.log(`Listen on port ${port}`);
 });
