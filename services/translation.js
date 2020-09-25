@@ -2,7 +2,7 @@ const axios = require("axios").default;
 const getToken = require("./queryToken");
 
 async function translation(
-  message = "Hello World",
+  message = "You have to select a language",
   fromLanguage = "en",
   toLanguage = ["es", "it"]
 ) {
