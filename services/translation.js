@@ -1,35 +1,42 @@
 const axios = require("axios").default;
+const getToken = require("./queryToken");
 
-function translation(message = "Hello World") {
-  var subscriptionKey = "96413e12fd884cefb5047ca410ab686e";
-  var endpoint = "https://api.cognitive.microsofttranslator.com/";
+async function translation(
+  message = "Hello World",
+  fromLanguage = "en",
+  toLanguage = ["es", "it"]
+) {
+  try {
+    const token = await getToken();
 
-  axios({
-    baseURL: "https://api.cognitive.microsofttranslator.com",
-    url: "/translate",
-    method: "post",
-    headers: {
+    var endpoint = "https://api.cognitive.microsofttranslator.com";
+
+    const result = await axios({
+      baseURL: endpoint,
+      url: "/translate",
+      method: "post",
       headers: {
-        "Ocp-Apim-Subscription-Key": "fcd3101b613e4b3a922d55e2fa2d652e",
+        Authorization: `Bearer ${token}`,
         "Content-type": "application/json",
       },
-    },
-    params: {
-      "api-version": "3.0",
-      from: "en",
-      to: ["de", "it"],
-    },
-    data: [
-      {
-        text: "Hello",
+      params: {
+        "api-version": "3.0",
+        from: fromLanguage,
+        to: toLanguage,
       },
-    ],
-    responseType: "json",
-  })
-    .then(function (response) {
-      console.log(JSON.stringify(response.data, null, 4));
-    })
-    .catch((error) => console.log(error.message));
+      data: [
+        {
+          text: message,
+        },
+      ],
+      responseType: "json",
+    });
+
+    const { data } = result;
+    return data;
+  } catch (error) {
+    console.log(error.message);
+  }
 }
 
 module.exports = translation;
