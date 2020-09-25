@@ -3,8 +3,12 @@ const translationService = require("../services/translation");
 const route = new Router();
 
 route.post("/", async (req, res) => {
-  const { message } = req.body;
-  const traducciones = await translationService(message);
+  const { message, fromLanguage, toLanguage } = req.body;
+  const traducciones = await translationService(
+    message,
+    fromLanguage,
+    toLanguage
+  );
   return res.send(traducciones);
 });
 
