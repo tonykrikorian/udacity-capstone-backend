@@ -12,4 +12,5 @@ route.post("/", async (req, res) => {
   return res.send(traducciones);
 });
 
+route.get("/languages", async (req, res) => {});
 module.exports = route;
