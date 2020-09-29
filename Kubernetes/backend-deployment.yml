@@ -1,9 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: translation-microservice
   name: translation-microservice
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: translation-microservice
@@ -15,11 +16,7 @@ spec:
     spec:
       containers:
         - name: translation-microservice
-          image: tkrikoriam/translation-microservice:tagname:v11
-          resources:
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
+          image: tkrikoriam/translation-microservice:v11
           ports:
             - containerPort: 80
           env:

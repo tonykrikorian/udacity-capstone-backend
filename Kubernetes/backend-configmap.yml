@@ -3,8 +3,6 @@ kind: ConfigMap
 metadata:
   namespace: translation-microservice
   name: backend-configmap
-  labels:
-    app: translation-microservice
 data:
   urltokenazure: https://eastus.api.cognitive.microsoft.com/sts/v1.0/issueToken
   azuretraductorurl: https://api.cognitive.microsofttranslator.com
