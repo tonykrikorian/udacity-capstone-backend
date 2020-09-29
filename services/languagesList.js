@@ -1,9 +1,7 @@
 const axios = require("axios").default;
 
 async function getLanguageList() {
-  const { data } = await axios.get(
-    "https://api.cognitive.microsofttranslator.com/languages?api-version=3.0"
-  );
+  const { data } = await axios.get(process.env.URL_AZURE_LANGUAGES_LIST);
   return mapLanguageData(data);
 }
 

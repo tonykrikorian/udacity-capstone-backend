@@ -9,7 +9,7 @@ async function translation(
   try {
     const token = await getToken();
 
-    var endpoint = "https://api.cognitive.microsofttranslator.com";
+    var endpoint = process.env.URL_AZURE_TRANSLATE;
 
     const result = await axios({
       baseURL: endpoint,
