@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: translation-microservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: translation-microservice
+  template:
+    metadata:
+      labels:
+        app: translation-microservice
+    spec:
+      containers:
+        - name: translation-microservice
+          image: <Image>
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 80
