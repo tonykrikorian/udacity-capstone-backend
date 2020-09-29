@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: Service Name
+  name: translation-microservice-service
 spec:
   selector:
     app: translation-microservice
