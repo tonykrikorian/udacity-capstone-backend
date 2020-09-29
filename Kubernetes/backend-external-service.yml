@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: Service Name
+spec:
+  selector:
+    app: translation-microservice
+  type: LoadBalancer
+  ports:
+    - name: name-of-the-port
+      port: 3502
+      targetPort: 80
