@@ -2,4 +2,4 @@
 docker login
 
 #Subir la imagen
-docker push tkrikoriam/translation-microservice:v9
+docker push tkrikoriam/translation-microservice:v10
