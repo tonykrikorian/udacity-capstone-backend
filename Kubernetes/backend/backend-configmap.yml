@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: microservices
+  name: backend-configmap
+data:
+  urltokenazure: https://eastus.api.cognitive.microsoft.com/sts/v1.0/issueToken
+  azuretraductorurl: https://api.cognitive.microsofttranslator.com
+  languageslist: https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
+  dockerImageID: tkrikoriam/translation-microservice:tagname:v11
