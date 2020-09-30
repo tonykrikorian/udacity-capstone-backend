@@ -1,12 +1,13 @@
 kind: Service
 apiVersion: v1
 metadata:
+  namespace: translation-microservice
   name: translation-microservice-service
 spec:
   selector:
     app: translation-microservice
-  type: LoadBalancer
+  type: ClusterIP
   ports:
-    - name: name-of-the-port
+    - protocol: TCP
       port: 3502
       targetPort: 80
