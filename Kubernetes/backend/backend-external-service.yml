@@ -9,5 +9,5 @@ spec:
   type: ClusterIP
   ports:
     - protocol: TCP
-      port: 3500
+      port: 4000
       targetPort: 80
