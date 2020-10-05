@@ -46,7 +46,8 @@ pipeline{
          stage("Deploy to AWS EKS"){
             steps{
                 sh '''
-                 kubectl get namespaces
+                    aws eks --region us-west-2 update-kubeconfig --name EKSUdacityCapstone
+                    kubectl get namespaces
                  '''
             }
         }
