@@ -4,7 +4,7 @@ pipeline{
         stage("Build Docker image"){
             steps{
                 echo "========Building Docker image========"
-                echo "Build number ${BUILD_NUMBER}"
+                echo "Build number id ${BUILD_NUMBER}"
                 
                 sh ''' docker build -t tkrikoriam/translation-microservice:v${BUILD_NUMBER} . \
                 --build-arg value7000="987001e00cf5495aa064b9212cddf659" \
