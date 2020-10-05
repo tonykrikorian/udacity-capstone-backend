@@ -4,7 +4,7 @@ pipeline{
         stage("ESlint code JS"){
             steps{
                 sh '''
-                    eslint index.js
+                   ./node_modules/.bin/eslint index.js
                  '''
             }
         }
