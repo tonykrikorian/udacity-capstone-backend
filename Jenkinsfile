@@ -46,6 +46,9 @@ pipeline{
          stage("Deploy to AWS EKS"){
             steps{
                 sh ''' 
+                    aws sts get-caller-identity
+                '''
+                sh ''' 
                     aws eks --region us-west-2 update-kubeconfig --name EKSUdacityCapstone
                 '''
                 sh '''
