@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("A"){
             steps{
-                echo "========executing A========"
+                echo "========executing AA========"
                 echo env.BUILD_NUMBER
             }
             post{
