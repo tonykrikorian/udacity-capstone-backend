@@ -53,9 +53,10 @@ pipeline{
                    aws eks --region us-west-2 update-kubeconfig --name EKSUdacityCapstone
                 '''
                 sh '''
-                    kubectl set image deployments/translation-microservice 
+                    kubectl set image deployment.apps/translation-microservice  
                     translation-microservice=321304165861.dkr.ecr.us-west-2.amazonaws.com/translation-microservice:v1 
-                    -n microservices
+                    -n microservices 
+                    
                  '''
 
                  sh 'kubectl get all -n microservices'
