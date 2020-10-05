@@ -10,7 +10,7 @@ pipeline{
         }
         // stage("Build Docker image"){
         //     steps{
-        //         echo "========Building Docker image========"
+        //         echo "========Building Docker image=========="
         //         echo "Build number id ${BUILD_NUMBER}"
                 
         //         sh ''' docker build -t 321304165861.dkr.ecr.us-west-2.amazonaws.com/translation-microservice:v${BUILD_NUMBER} . \
