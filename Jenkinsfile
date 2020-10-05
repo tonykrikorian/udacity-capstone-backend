@@ -23,7 +23,7 @@ pipeline{
                 }
             }
         }
-        stage("Upload Docker Image to AWS ECR"){
+        stage("Upload Image to ECR"){
             steps{
                 echo "========Uploading Docker image========"
                 sh ''' 
@@ -42,17 +42,6 @@ pipeline{
                     echo "====++++only when failed++++===="
                 }
             }
-        }
-    }
-    post{
-        always{
-            echo "========always========"
-        }
-        success{
-            echo "========pipeline executed successfully ========"
-        }
-        failure{
-            echo "========pipeline execution failed========"
         }
     }
 }
