@@ -54,7 +54,7 @@ pipeline{
                 '''
                 sh '''
                     kubectl set image deployments/translation-microservice 
-                    translation-microservice=321304165861.dkr.ecr.us-west-2.amazonaws.com/translation-microservice:v1
+                    translation-microservice=321304165861.dkr.ecr.us-west-2.amazonaws.com/translation-microservice:v1 -n microservices
                  '''
 
                  sh 'kubectl get all -n microservices'
