@@ -45,7 +45,8 @@ pipeline{
         // }
          stage("Deploy to AWS EKS"){
             steps{
-                sh ''' 
+             withAWS(region:'us-west-2',credentials:'AWS_EKS'){
+                    sh ''' 
                     aws sts get-caller-identity
                 '''
                 sh ''' 
@@ -54,6 +55,7 @@ pipeline{
                 sh '''
                     kubectl get namespaces
                  '''
+             }
             }
         }
     }
