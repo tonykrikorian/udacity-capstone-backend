@@ -1,13 +1,6 @@
 pipeline{
     agent any
     stages{
-        stage("ESlint code JS"){
-            steps{
-                sh '''
-                   ./node_modules/.bin/eslint index.js
-                 '''
-            }
-        }
         // stage("Build Docker image"){
         //     steps{
         //         echo "========Building Docker image=========="
@@ -50,5 +43,12 @@ pipeline{
         //         }
         //     }
         // }
+         stage("Deploy to AWS EKS"){
+            steps{
+                sh '''
+                 kubectl get namespaces
+                 '''
+            }
+        }
     }
 }
