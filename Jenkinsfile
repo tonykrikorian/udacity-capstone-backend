@@ -50,7 +50,7 @@ pipeline{
                     aws sts get-caller-identity
                 '''
                 sh ''' 
-                   aws eks --region region update-kubeconfig --name cluster_name
+                   aws eks --region us-west-2 update-kubeconfig --name EKSUdacityCapstone
                 '''
                 sh '''
                     kubectl set image deployments/translation-microservice 
