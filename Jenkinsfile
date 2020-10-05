@@ -4,6 +4,7 @@ pipeline{
         stage("A"){
             steps{
                 echo "========executing A========"
+                echo env.BUILD_NUMBER
             }
             post{
                 always{
