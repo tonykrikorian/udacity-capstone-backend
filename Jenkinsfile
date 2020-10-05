@@ -17,7 +17,7 @@ pipeline{
             post{
                 success{
                     echo "========Docker image Builded========"
-                    echo 
+                    echo "Docker image build successfully"
                 }
                 failure{
                     echo "========A execution failed========"
