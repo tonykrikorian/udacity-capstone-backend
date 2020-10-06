@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage("ESLint JS Code"){
             steps{
-              nodejs('NodeJS'){
+            
                 sh "tidy -q -e *.js"
                 // sh "eslint routes/ -f table"
                 // sh "eslint services/ -f table"
                 // sh "eslint routes/ -f table"          
-                }
+               
                
                  
             }
