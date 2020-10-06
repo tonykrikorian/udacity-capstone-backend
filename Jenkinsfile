@@ -3,10 +3,13 @@ pipeline {
     stages {
         stage("ESLint JS Code"){
             steps{
-             
-                sh "eslint routes/ -f table"
-                sh "eslint services/ -f table"
-                sh "eslint routes/ -f table"            
+              nodejs('NodeJS'){
+                sh "npm -v"
+                // sh "eslint routes/ -f table"
+                // sh "eslint services/ -f table"
+                // sh "eslint routes/ -f table"          
+                }
+               
                  
             }
         }
