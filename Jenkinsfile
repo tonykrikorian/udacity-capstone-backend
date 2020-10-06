@@ -3,7 +3,6 @@ pipeline {
     stages {
         stage("ESLint JS Code"){
             steps{
-             checkout(scm)
              sh "npm -v"
              sh "npm install"
              sh "eslint index.js"                
