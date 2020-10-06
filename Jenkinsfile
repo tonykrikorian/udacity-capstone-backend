@@ -5,7 +5,7 @@ pipeline {
             steps{
              sh "npm -v"
              sh "npm install"
-             sh "eslint index.js"                
+             sh "node_modules/.bin/eslint index.js"                
             }
         }
         // stage("Build Docker image"){
