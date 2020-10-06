@@ -6,7 +6,7 @@ pipeline {
              checkout(scm)
              sh "npm -v"
              sh "npm install"
-             sh "sudo eslint index.js"                
+             sh "eslint index.js"                
             }
         }
         // stage("Build Docker image"){
