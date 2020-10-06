@@ -4,7 +4,7 @@ pipeline {
         stage("ESLint JS Code"){
             steps{
              checkout(scm)
-             sh "eslint index.js"                
+             sh "sudo eslint index.js"                
             }
         }
         // stage("Build Docker image"){
