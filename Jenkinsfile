@@ -3,9 +3,11 @@ pipeline {
     stages {
         stage("ESLint JS Code"){
             steps{
-                sh 'eslint routes/ -f table'
-                sh 'eslint services/ -f table'
-                sh 'eslint routes/ -f table'               
+              nodejs('NodeJS'){
+                sh "eslint routes/ -f table"
+                sh "eslint services/ -f table"
+                sh "eslint routes/ -f table"            
+              }   
             }
         }
         // stage("Build Docker image"){
