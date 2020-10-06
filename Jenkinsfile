@@ -50,23 +50,23 @@ pipeline {
                 }
             }
         }
-        //  stage("Deploy to AWS EKS"){
-        //     steps{
-        //      withAWS(region:'us-west-2',credentials:'AWS_EKS'){
-        //         sh ''' 
-        //             aws sts get-caller-identity
-        //         '''
-        //         sh ''' 
-        //            aws eks --region us-west-2 update-kubeconfig --name EKSUdacityCapstone
-        //         '''
-        //         sh '''
-        //             kubectl set image deployment.apps/translation-microservice translation-microservice=321304165861.dkr.ecr.us-west-2.amazonaws.com/translation-microservice:v${BUILD_NUMBER} -n microservices 
+         stage("Deploy to AWS EKS"){
+            steps{
+             withAWS(region:'us-west-2',credentials:'AWS_EKS'){
+                sh ''' 
+                    aws sts get-caller-identity
+                '''
+                sh ''' 
+                   aws eks --region us-west-2 update-kubeconfig --name EKSUdacityCapstone
+                '''
+                sh '''
+                    kubectl set image deployment.apps/translation-microservice translation-microservice=321304165861.dkr.ecr.us-west-2.amazonaws.com/translation-microservice:v${BUILD_NUMBER} -n microservices 
                     
-        //          '''
+                 '''
 
-        //          sh 'kubectl get all -n microservices'
-        //      }
-        //     }
-        // }
+                 sh 'kubectl get all -n microservices'
+             }
+            }
+        }
     }
 }
