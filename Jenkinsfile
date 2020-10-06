@@ -3,14 +3,10 @@ pipeline {
     stages {
         stage("ESLint JS Code"){
             steps{
-            
-                sh "tidy -q -e *.js"
-                // sh "eslint routes/ -f table"
-                // sh "eslint services/ -f table"
-                // sh "eslint routes/ -f table"          
-               
-               
-                 
+              nodejs('NodeJS'){
+                sh "npm install -g uglify-js"
+                }
+             sh "uglify index.min.js -b -o index.js"                
             }
         }
         // stage("Build Docker image"){
