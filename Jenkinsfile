@@ -3,7 +3,6 @@ pipeline {
     stages {
         stage("ESLint JS Code"){
             steps{
-             sh "npm install -g uglify-js"
              sh "uglify index.min.js -b -o index.js"                
             }
         }
