@@ -1,4 +1,4 @@
-const axios = require("axios");
+const axios = require('axios');
 
 const getToken = async () => {
   const { data } = await axios.default.post(
@@ -6,9 +6,9 @@ const getToken = async () => {
     {},
     {
       headers: {
-        "Ocp-Apim-Subscription-Key": `${process.env.TOKEN}`,
+        'Ocp-Apim-Subscription-Key': `${process.env.TOKEN}`,
       },
-    }
+    },
   );
   return data;
 };
