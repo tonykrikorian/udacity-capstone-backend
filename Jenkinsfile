@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage("ESLint JS Code"){
             steps{
-             sh "uglify index.min.js -b -o index.js"                
+             checkout(scm)
+             sh "eslint index.js"                
             }
         }
         // stage("Build Docker image"){
