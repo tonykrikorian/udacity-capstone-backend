@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: translation-microservice
-          image: tkrikoriam/translation-microservice:v11
+          image: tkrikoriam/translation-microservice:v36
           ports:
             - containerPort: 80
           env:
